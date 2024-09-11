@@ -61,8 +61,10 @@ ex) 박설화: 1주차 학습 제출
 
 ## 책 정보
 
-![](https://contents.kyobobook.co.kr/sih/fit-in/400x0/pdt/9791169211567.jpg) \
-[**우아한 타입스크립트 with 리액트, 우아한형제들 저자(글) 김민태 감수**](https://product.kyobobook.co.kr/detail/S000210716282)\
+![](https://contents.kyobobook.co.kr/sih/fit-in/400x0/pdt/9791169211567.jpg)\
+[**우아한 타입스크립트 with 리액트, 우아한형제들 저자(글) 김민태 감수**](https://product.kyobobook.co.kr/detail/S000210716282)
+
+<br />
 
 ### 목차
 <details>
@@ -107,6 +109,7 @@ CSS-in-JS는 자바스크립트에서 CSS를 작성하는 방식이다. CSS-in-J
 
 </details>
 
+<br />
 
 ### 참고 자료
 - [우아한 타입스크립트 책에 사용된 예시 코드 저장소](https://github.com/woowa-typescript/woowahan-typescript-with-react-example-code)
