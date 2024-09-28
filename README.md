@@ -26,7 +26,7 @@
 |------|------|------|------|
 | OT | ~~24-09-14(SAT) 20:00~~ | - | - |
 | 1 | 24-09-21(SAT) 20:00 | [3장 고급 타입, 4장 타입 확장하기·좁히기](https://github.com/iberis2/woowa-typescript-study/tree/main/1%EC%A3%BC%EC%B0%A8) | **설화(발표)**, 민섭, 태현 |
-| 2 | 24-09-28(SAT) 20:00 | [5장 타입 활용하기](https://github.com/iberis2/woowa-typescript-study/tree/main/2%EC%A3%BC%EC%B0%A8) | (예정) **태현**(발표), 민섭, 설화, 재정 |
+| 2 | 24-09-28(SAT) 20:00 | [5장 타입 활용하기](https://github.com/iberis2/woowa-typescript-study/tree/main/2%EC%A3%BC%EC%B0%A8) |**태현(발표)**, 민섭, 설화, 재정 |
 | 3 | 24-10-05(SAT) 20:00 | [링크]() | (예정) |
 | 4 | 24-10-12(SAT) 20:00 | [링크]() | (예정) |
 | 5 | 24-10-19(SAT) 20:00 | [링크]() | (예정) |
