@@ -1,15 +1,15 @@
 # [🔗 1주차: (1~4장) 객체 타입, 타입 확장, 타입 좁히기](https://velog.io/@iberis/14장-객체-타입-타입-확장-타입-좁히기)
 
 > ## 💡용어 정리
-**폴리필** : 브라우저가 지원하지 않는 코드를 브라우저가 사용할 수 있는 코드로 변환한 코드 조각이나 플러그인
-**슈퍼셋** : 기존 언어에 새로운 기능과 문법을 추가해서 보완하거나 향상하는 것을 말한다. 슈퍼셋 언어는 기존 언어와 호환되며 일반적으로 컴피일러 등으로 기존 언어 코드로 변환되어 실행된다.
-**트랜스파일** : 최신 버전의 코드를 구 버전으로 변환하는 과정
-**컴파일** : 사람이 이해하는 언어를 컴퓨터가 이해할 수 있는 언어로 변환해주는 과정으로, 서로 다른 수준(고수준-저수준) 간의 코드 변환을 의미
-- 타입스크립트의 컴파일 결과물 파일은 자바스크립트 파일이다.
-**컴파일 타입** : 컴퓨터가 소스코드를 이해할 수 있도록 기계어로 변환되는 시점
-**런타임** : 컴파일 후 변환된 파일이 메모리에 적재되어 실행되는 시점
-**웹 애플리케이션** : 사용자와 상호작용하는 쌍방향 소통의 웹사이트 
-- cf) 웹사이트 : 단방향 적으로 정보를 제공하는 HTML 에 링크가 연결된 웹 페이지 모음
+> **폴리필** : 브라우저가 지원하지 않는 코드를 브라우저가 사용할 수 있는 코드로 변환한 코드 조각이나 플러그인\
+> **슈퍼셋** : 기존 언어에 새로운 기능과 문법을 추가해서 보완하거나 향상하는 것을 말한다. 슈퍼셋 언어는 기존 언어와 호환되며 일반적으로 컴피일러 등으로 기존 언어 코드로 변환되어 실행된다.\
+> **트랜스파일** : 최신 버전의 코드를 구 버전으로 변환하는 과정\
+> **컴파일** : 사람이 이해하는 언어를 컴퓨터가 이해할 수 있는 언어로 변환해주는 과정으로, 서로 다른 수준(고수준-저수준) 간의 코드 변환을 의미\
+>  - 타입스크립트의 컴파일 결과물 파일은 자바스크립트 파일이다.\
+> **컴파일 타입** : 컴퓨터가 소스코드를 이해할 수 있도록 기계어로 변환되는 시점\
+> **런타임** : 컴파일 후 변환된 파일이 메모리에 적재되어 실행되는 시점\
+> **웹 애플리케이션** : 사용자와 상호작용하는 쌍방향 소통의 웹사이트 \
+>  - cf) 웹사이트 : 단방향 적으로 정보를 제공하는 HTML 에 링크가 연결된 웹 페이지 모음\
 >
 |  | **명목적 타이핑** | **구조적 타이핑** | **덕타이핑** |
 | --- | --- | --- | --- |
@@ -59,8 +59,8 @@ class Arrow {
 const cat: Arrow = new Cat('mewoo');
 ```
 >
-<details>
-  <summary><h3>구조적 타이핑(덕타이핑)으로 인해 마주하는 이슈</h3></summary>
+
+### 구조적 타이핑(덕타이핑)으로 인해 마주하는 이슈
 >
 객체의 key 를 `Object.keys()` 와 `.map()` 매서드로 순회하려고 할 때, key 가 객체의 key 로 타입이 좁혀지지 않고, string 으로 정의되는 이슈가 있다.
 >
@@ -83,7 +83,7 @@ const studentKeyType = Object.keys(student); // string[]
 ```
 >
 위 문제를 해결하기 위한 방법
-1. **Obejct.keys(객체)**를 `as`로 타입 단언    
+방법1. **Obejct.keys(객체)** 를 `as`로 타입 단언    
     ```tsx
     type Student = typeof student;
 >    
@@ -93,7 +93,7 @@ const studentKeyType = Object.keys(student); // string[]
     });
     ```
 >    
-2. 제네릭을 활용해 **Object.keys**에 대한 **반환 타입을 객체의 key 타입으로 강제하는 함수를 덧씌움**
+방법2. 제네릭을 활용해 **Object.keys**에 대한 **반환 타입을 객체의 key 타입으로 강제하는 함수를 덧씌움**
     - **keysOf** 함수는 객체의 키를 가지고 오면서 동시에 가져온 배열에 대해서도 마찬가지로 타입 단언으로 처리하는 과정을 거친다.
 >    
     ```tsx
@@ -108,7 +108,7 @@ const studentKeyType = Object.keys(student); // string[]
     });
     ```
 >    
-3. 순회할 **key 의 타입을 as로 단언** 
+방법3. 순회할 **key 의 타입을 as로 단언** 
 >    
     ```tsx
     type Student = typeof student;
@@ -118,7 +118,7 @@ const studentKeyType = Object.keys(student); // string[]
       return value;
     });  
     ```
-</details>
+
 
 ## 객체 타입일까? { }, object
 
@@ -406,11 +406,11 @@ const student : StudentType = {
 
 ---
 
-참고 
-우아한 타입스크립트 1 ~ 4장
-타입스크립트 교과서
-[[TypeScript] 여러 타입 선언 방법과 interface & type Alias 비교](https://velog.io/@skawnkk/interface-type-Alias)
-[[TypeScript] 인터페이스: 확장과 교차](https://velog.io/@violetwhenisawu/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%86%8D%EC%84%B1-6wc1ad68)
+참고 \
+우아한 타입스크립트 1 ~ 4장\
+타입스크립트 교과서\
+[[TypeScript] 여러 타입 선언 방법과 interface & type Alias 비교](https://velog.io/@skawnkk/interface-type-Alias)\
+[[TypeScript] 인터페이스: 확장과 교차](https://velog.io/@violetwhenisawu/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%86%8D%EC%84%B1-6wc1ad68)\
 [타입스크립트의 인덱스 시그니처와 Object.keys 그리고 덕 타이핑](https://5kdk.github.io/blog/2024/04/04/index-signatures-and-duck-typing)
 
 ---
@@ -471,8 +471,8 @@ console.log(getType(/abc/)); // "RegExp"
     - 타입을 `[object Type]` 형식의 문자열로 반환하기 위해,  메모리 할당을 요구하며, 문자열 연산이 포함된다
     - `call()` 메서드는 명시적으로 `this` 값을 설정한 후 함수를 호출하기 때문에, 함수 호출에 대한 추가 비용이 발생
 
-<details>
-<summary><h3>💡객체.toString() 으로 바로 사용하지 않고 `Object.prototype.toString.call(…)` 을 사용하는 이유</h3></summary>
+
+### 💡객체.toString() 으로 바로 사용하지 않고 `Object.prototype.toString.call(…)` 을 사용하는 이유
 
 ### Object.prototype
 자바스크립트의 모든 객체는 `Object`의 인스턴스이다. `Object.prototype`은 모든 객체의 부모 객체이며, 여기에 정의된 메서드나 속성은 모든 객체가 상속받는다. 모든 객체는 `Object`의 프로토타입 체인을 따르므로, 객체에서 메서드를 직접 정의하지 않더라도 `Object.prototype`에 정의된 메서드(ex. `toString()`)를 상속받아 사용할 수 있다.
@@ -507,10 +507,8 @@ console.log(getType(/abc/)); // "RegExp"
   ```   
 
   >💡  **`.call()`** 메서드와 **`.apply()`** 는 첫 번째 인자로 객체를 받아서 같은 동작을 한다. call() 과의 차이는 두 번째 인자로 값이 들어오는 지, 배열이 들어오는 지 차이가 있다.
-</details>
-    
-<details>
-  <summary><h3>`Object.prototype.toString.call(객체)` 에서 객체 대신 원시타입을 전달해도 원시타입의 Class 가 나오는 이유 </h3></summary>
+
+### `Object.prototype.toString.call(객체)` 에서 객체 대신 원시타입을 전달해도 원시타입의 Class 가 나오는 이유 
 
 - 자바스크립트는 원시 타입을 객체처럼 다룰 수 있도록 자동으로 **래핑(wrapping)**하는 과정을 거친다. 이를 **박싱(boxing)**이라고 한다.
 - 원시 타입은 객체가 아니지만, 자바스크립트는 원시 값을 일시적으로 객체처럼 다룰 수 있도록 **박싱한**다. 따라서 `Object.prototype.toString.call()` 함수는 박싱된 객체의 내부 `[[Class]]` 값을 사용해 해당 원시 타입의 객체 버전을 반환하는 것이다.
@@ -535,7 +533,7 @@ console.log(Object.prototype.toString.call(123));  // [object Number]
 이는 원시 값 `123`을 **일시적으로** `Number` 객체로 변환해서 해당 객체의 `[[Class]]` 속성을 참조하기 때문에 `[object Number]`가 반환된다. 
 
 - 하지만 이는 박싱된 객체일 뿐, 원시 값 자체가 객체로 변환된 것은 아니다.
-</details>
+
 ---
 
 ## 추가적인 타입 검사
@@ -646,5 +644,5 @@ function XorY3(param: X | Y){
 ```
   
 ---
-참고
+참고\
  [타입스크립트 교과서](https://product.kyobobook.co.kr/detail/S000208416779?utm_source=google&utm_medium=cpc&utm_campaign=googleSearch&gad_source=1&gclid=Cj0KCQjw3bm3BhDJARIsAKnHoVVvEm8AqscCY-aLy0EgZIFvKy0gml4t-osNfNr-2qC3shany_VtVlEaAo1aEALw_wcB)
