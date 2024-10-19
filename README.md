@@ -30,9 +30,9 @@
 | 3 | 24-10-05(SAT) 20:00 | [6장 타입스크립트 컴파일, 7장 비동기 호출](https://github.com/iberis2/woowa-typescript-study/tree/main/3%EC%A3%BC%EC%B0%A8) | **민섭(발표)**, 설화, 재정, 태현 |
 | 4 | 24-10-12(SAT) 20:00 | [8장 JSX에서 TSX로 ](https://github.com/iberis2/woowa-typescript-study/tree/main/4%EC%A3%BC%EC%B0%A8) | **태현(발표)**, 민섭, 설화, 재정 |
 | 5 | 24-10-19(SAT) 20:00 | [9장 Hook](https://github.com/iberis2/woowa-typescript-study/tree/main/5%EC%A3%BC%EC%B0%A8) | **재정(발표)**, 민섭, 설화, 태현 |
-| 6 | 24-10-26(SAT) 20:00 | [링크]() | (예정) |
-| 7 | 24-11-03(SAT) 20:00 | [링크]() | (예정) |
-| 8 | 24-11-10(SAT) 20:00 | [링크]() | (예정) |
+| 6 | 24-10-26(SAT) 20:00 | [링크]() | (예정) **민섭(발표)**, |
+| 7 | 24-11-03(SAT) 20:00 | [링크]() | (예정) **재정(발표)**, |
+| 8 | 24-11-10(SAT) 20:00 | [링크]() | (예정) **설화(발표)**, |
 
 <br>
 
