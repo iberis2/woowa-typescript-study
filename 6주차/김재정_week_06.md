@@ -43,7 +43,13 @@ type Dispatch<A> = (value: A) => void;
 type SetStateAction<S> = S | ((prevState: S) => S);
 
 // useState의 반환튜플 첫 번째 요소 : useState로 관리할 상태 타입 S
+// 즉, useState는 어떤 타입의 상태든 관리할 수 있음
 // useState의 반환튜플 두 번째 요소 : 상태를 업데이트할 함수 Dispatch
+```
+
+```tsx
+setCount(10); // 상태를 직접 10으로 설정
+setCount(prevCount => prevCount + 1); // 이전 상태를 기반으로 1 증가
 ```
 
 <br />
@@ -275,7 +281,35 @@ function useCallback<T extends (...args: any[]) => any>(
   callback: T,
   deps: DependencyList
 ): T;
+
+//factory: 값을 생성하는 함수입니다. 
+//useMemo는 이 함수의 결과값을 기억하고, 의존성 배열에 포함된 값들이 변경되지 않는 한 
+// 이전에 계산된 결과값을 반환합니다.
 ```
+
+```tsx
+const MyComponent = ({ items }) => {
+  // items의 총합을 계산하는 함수, 이 계산이 무겁다고 가정
+  const total = useMemo(() => items.reduce((sum, item) => sum + item.price, 0), [items]);
+
+  // 클릭 핸들러, items가 변경되지 않으면 함수도 재생성되지 않음
+  const handleClick = useCallback(() => {
+    console.log("Total clicked:", total);
+  }, [total]);
+
+  return <button onClick={handleClick}>Total: {total}</button>;
+};
+
+```
+
+useMemo와 useCallback의 차이점 요약
+useMemo: 값을 메모이제이션합니다. 계산 결과가 변경되지 않았으면 이전 값을 재사용합니다.
+useCallback: 함수를 메모이제이션합니다. 함수 참조값이 변경되지 않았으면 이전 함수를 재사용합니다.
+
+
+useMemo: items 배열이 변경될 때만 total을 다시 계산하고, 변경되지 않으면 이전에 계산된 값을 사용
+
+useCallback: total이 변경될 때만 handleClick 함수를 다시 생성하고, 변경되지 않으면 이전 함수를 재사용
 
 <br />
 
